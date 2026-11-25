@@ -1,16 +1,15 @@
 <div align="center">
 
-# 🛠️ cocoapods-binary-cache
+# cocoapods-binary-cache
 
 **Cuts Xcode build time with prebuilt pods shared via git · fetch · prebuild · push · viz**
 
 This repo is Glovo's fork of [`grab/cocoapods-binary-cache`](https://github.com/grab/cocoapods-binary-cache). It is a Ruby gem that CocoaPods loads as a plugin. The plugin prebuilds selected pods into frameworks, stores them in a git **cache repo**, and lets other machines reuse them instead of compiling the sources. It is not a service and nothing deploys it: projects add it to their `Gemfile` as a Git-sourced gem.
 
-[![Ruby](https://img.shields.io/badge/Ruby-2.7_in_CI-CC342D?logo=ruby&logoColor=white)](.github/workflows/test.yml)
-[![CocoaPods](https://img.shields.io/badge/CocoaPods-%3E%3D_1.5.0-EE3322?logo=cocoapods&logoColor=white)](cocoapods-binary-cache.gemspec)
-[![Gem version](https://img.shields.io/badge/gem-0.1.14-E9573F?logo=rubygems&logoColor=white)](VERSION)
+[![Ruby](https://img.shields.io/badge/Ruby-CC342D?logo=ruby&logoColor=white)](.github/workflows/test.yml)
+[![CocoaPods](https://img.shields.io/badge/CocoaPods-%3E%3D-EE3322?logo=cocoapods&logoColor=white)](cocoapods-binary-cache.gemspec)
+[![Gem version](https://img.shields.io/badge/gem-E9573F?logo=rubygems&logoColor=white)](VERSION)
 <br/>
-[![Test files](https://img.shields.io/badge/test_files-17-blue)](#testing)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Fork of grab/cocoapods-binary-cache](https://img.shields.io/badge/fork_of-grab%2Fcocoapods--binary--cache-555?logo=github)](https://github.com/grab/cocoapods-binary-cache)
 
@@ -323,7 +322,7 @@ There are no git hooks.
 
 ```text
 .
-├── lib/                          ⭐ the gem (64 Ruby files)
+├── lib/                          source of truth: the gem (64 Ruby files)
 │   ├── cocoapods_plugin.rb       #   entry point CocoaPods loads for `plugin "cocoapods-binary-cache"`
 │   ├── command/                  #   `pod binary` fetch / prebuild / push / viz and their executors
 │   └── cocoapods-binary-cache/   #   hooks, cache validators, prebuild (pod-binary), xcodebuild (pod-rome), diagnosis
